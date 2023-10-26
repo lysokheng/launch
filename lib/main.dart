@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shake_animated/flutter_shake_animated.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -13,14 +12,13 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'To link',
-      home:  MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
-
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -36,8 +34,9 @@ class _MyHomePageState extends State<MyHomePage> {
         height: double.infinity,
         padding: const EdgeInsets.only(top: 80),
         decoration: const BoxDecoration(
-            image: DecorationImage(image: AssetImage('assets/2023-10-26 14.51.45.jpg'),fit: BoxFit.fill)
-        ),
+            image: DecorationImage(
+                image: AssetImage('assets/2023-10-26 14.51.45.jpg'),
+                fit: BoxFit.fill)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -46,42 +45,41 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 200,
               alignment: Alignment.center,
               decoration: const BoxDecoration(
-                image: DecorationImage(image: AssetImage('assets/hay88-club.png'),fit: BoxFit.fill)
-              ),
+                  image: DecorationImage(
+                      image: AssetImage('assets/hay88-club.png'),
+                      fit: BoxFit.fill)),
             ),
             const SizedBox(height: 100),
             GestureDetector(
               onTap: () async {
-                if(await canLaunchUrl(_url)) {
+                if (await canLaunchUrl(_url)) {
                   await launchUrl(
                     _url,
                   );
                 }
               },
-              child:ShakeWidget(
-                duration: const Duration(seconds: 3),
-                shakeConstant: ShakeHorizontalConstant1(),
-                autoPlay: true,
-                enableWebMouseHover: true,
-                child: Container(
-                  width: 300,
-                  height: 200,
-                  alignment: Alignment.center,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(image: AssetImage('assets/button.png'))
-                  ),
-                  // decoration: BoxDecoration(
-                  //   color: Colors.blue,
-                  //   borderRadius: BorderRadius.circular(15)
-                  // ),
-                  // child: const Text('ĐĂNG KÝ NGAY',style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),),
+              child: Container(
+                width: 300,
+                height: 200,
+                alignment: Alignment.center,
+                // decoration: const BoxDecoration(
+                //   image: DecorationImage(image: AssetImage('assets/button.png'))
+                // ),
+                decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(15)),
+                child: const Text(
+                  'ĐĂNG KÝ NGAY',
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
             ),
           ],
         ),
       ),
-
     );
   }
 }
