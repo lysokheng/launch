@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'To link',
+      title: 'slot888',
       home: MyHomePage(),
     );
   }
@@ -32,13 +32,12 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        padding: const EdgeInsets.only(top: 80),
         decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('assets/2023-10-26 14.51.45.jpg'),
                 fit: BoxFit.fill)),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               width: 200,
@@ -60,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Container(
                 width: 300,
-                height: 200,
+                height: 100,
                 alignment: Alignment.center,
                 // decoration: const BoxDecoration(
                 //   image: DecorationImage(image: AssetImage('assets/button.png'))
